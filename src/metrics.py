@@ -13,7 +13,7 @@ def calculate_metrics(sales):
         quantity = int(row["quantity"])
         price = float(row["price"])
 
-        revenue = quantity + price
+        revenue = quantity * price
         total_revenue += revenue
         total_sales += 1
 
