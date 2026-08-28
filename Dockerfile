@@ -10,4 +10,4 @@ COPY . .
 
 ENV PYTHONPATH=src
 
-CMD ["pytest"]
+CMD ["python", "src/main.py"]

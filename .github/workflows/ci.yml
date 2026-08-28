@@ -16,4 +16,4 @@ jobs:
         run: docker build -t csv-processor .
 
       - name: Run tests
-        run: docker run --rm csv-processor
+        run: docker run --rm csv-processor pytest

@@ -1,8 +1,9 @@
 import csv
 
-def read_sales():
+def read_sales(file_path):
     sales = []
-    with open("../data/sales.csv", "r") as file:
+
+    with open(file_path, "r") as file:
         reader = csv.DictReader(file)
 
         for row in reader:
