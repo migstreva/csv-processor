@@ -1,7 +1,7 @@
-import csv
 from pathlib import Path
-import pytest
+
 from csv_reader import read_sales
+
 
 def test_read_sales():
     file_path = Path(__file__).parent / "data" / "test_sales.csv"
@@ -21,3 +21,9 @@ def test_read_sales():
             "price": "100"
         }
     ]
+
+def test_read_empty_sales():
+    file_path = Path(__file__).parent / "data" / "empty_sales.csv"
+    sales = read_sales(file_path)
+
+    assert sales == []

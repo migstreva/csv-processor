@@ -1,5 +1,6 @@
 from pathlib import Path
 from csv_reader import read_sales
+from database import save_sales, get_sales
 from metrics import calculate_metrics
 
 def main():
@@ -7,6 +8,9 @@ def main():
     file_path = project_root / "data" / "sales.csv"
 
     sales = read_sales(file_path)
+    save_sales(sales)
+
+    sales = get_sales()
     metrics = calculate_metrics(sales)
 
     print("Total revenue:", metrics.total_revenue)
